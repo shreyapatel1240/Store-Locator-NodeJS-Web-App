@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    div.container.col-md-12
+        p#hello Hello!
+        p Day ends in #{h.moment().endOf('day').fromNow()}
