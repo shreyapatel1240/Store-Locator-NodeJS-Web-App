@@ -53,7 +53,10 @@ router.post('/account/reset/:token',
 
 router.get('/map', storeController.mapPage);
 
+router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.getHearts));
+
 router.get('/api/search', catchErrors(storeController.searchStores));
 router.get('/api/stores/near', catchErrors(storeController.mapStores));
+router.post('/api/stores/:id/heart', catchErrors(storeController.heartStore));
 
 module.exports = router;
